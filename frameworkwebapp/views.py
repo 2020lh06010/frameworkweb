@@ -1,13 +1,27 @@
 
 from django.shortcuts import render, HttpResponse
+from django.template import loader
 
 # Create your views here.
 
 def home(request):
-    return HttpResponse("home")
+    template = loader.get_template('frameworkwebapp/home.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
 
 def tienda(request):
-    return HttpResponse("tienda")
+    template = loader.get_template('frameworkwebapp/tienda.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
+
 
 def venta(request):
-    return HttpResponse("venta")
+    template = loader.get_template('frameworkwebapp/venta.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
